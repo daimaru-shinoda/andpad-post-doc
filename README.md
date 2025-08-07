@@ -12,4 +12,4 @@
 
 ### バッチ実行設定
 
-自動実行のために`andpad/create-task.bat`を実行する
+自動実行のために`create-task.bat`を実行する
