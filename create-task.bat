@@ -7,7 +7,7 @@ cd %CURRENT_PATH%
 mkdir tmp 2> nul
 
 @rem バッチ実行
-call:createTask "ANDPAD案件作成" %CURRENT_PATH%post.bat 04:45
+call:createTask "ANDPAD書類登録" %CURRENT_PATH%post.bat 07:35
 
 goto :eof
 
