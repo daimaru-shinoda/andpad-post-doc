@@ -24,7 +24,7 @@ import { downloadFileIds, downloadPdf } from "./gas";
     userAgent:
       "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.5735.133 Safari/537.36",
   });
-  const page = await context.newPage();
+  let page = null;
 
   try {
     const fileIds = await downloadFileIds();
@@ -38,11 +38,12 @@ import { downloadFileIds, downloadPdf } from "./gas";
       files.push(result);
     }
 
-    // await postFiles(page, files);
+     page = await context.newPage();
+    await postFiles(page, files);
   } catch (e) {
     console.debug(e);
   } finally {
-    await page.close();
+    if (!!page) await page.close();
     await browser.close();
   }
 })();
