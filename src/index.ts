@@ -38,7 +38,7 @@ import { downloadFileIds, downloadPdf } from "./gas";
       files.push(result);
     }
 
-     page = await context.newPage();
+    page = await context.newPage();
     await postFiles(page, files);
   } catch (e) {
     console.debug(e);
